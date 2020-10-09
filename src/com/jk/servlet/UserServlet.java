@@ -48,7 +48,7 @@ public class UserServlet extends BaseServlet {
         String email = req.getParameter("email");
         String code = req.getParameter("code");
 
-        User user = WebUtils.copyParamToBean(req.getParameterMap(),new User());
+        User user = WebUtils.copyParamToBean(req,new User());
 
         if (token != null && token.equalsIgnoreCase(code)) {
             if (userService.existUsername(username)) {
@@ -75,5 +75,19 @@ public class UserServlet extends BaseServlet {
     protected void logout(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getSession().invalidate();
         resp.sendRedirect(req.getContextPath());
+    }
+
+    protected void authentication(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        User user = (User) req.getSession().getAttribute("user");
+        if (user == null) {
+            req.getRequestDispatcher("/pages/user/login.jsp").forward(req, resp);
+        } else {
+            Integer permission = userService.permission(user.getUsername());
+            if (permission == 0) {
+                req.getRequestDispatcher("pages/manager/manager.jsp").forward(req, resp);
+            } else {
+                req.getRequestDispatcher("/pages/user/authentication_fail.jsp").forward(req, resp);
+            }
+        }
     }
 }

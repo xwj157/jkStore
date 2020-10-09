@@ -14,6 +14,6 @@ public interface UserDao {
 
     public User queryUserByUsernameAndPassword(String username,String password);
 
-
+    public Integer queryUserPermission(String username);
 
 }

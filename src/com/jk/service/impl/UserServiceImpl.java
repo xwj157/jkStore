@@ -31,4 +31,9 @@ public class UserServiceImpl implements UserService {
         }
         return true;
     }
+
+    @Override
+    public Integer permission(String username) {
+        return userDao.queryUserPermission(username);
+    }
 }

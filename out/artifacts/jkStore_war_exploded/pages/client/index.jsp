@@ -4,6 +4,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0" >
     <title>兔姬舍首页</title>
     <%@include file="/pages/common/head.jsp" %>
     <script type="text/javascript">
@@ -14,6 +16,7 @@
             });
         });
     </script>
+
 </head>
 <body>
 
@@ -27,11 +30,11 @@
         </c:if>
         <c:if test="${not empty sessionScope.user}">
             <span>欢迎<span class="um_span">${sessionScope.user.username}</span>光临兔姬舍</span>
-            <a href="pages/order/order.jsp">我的订单</a>
             <a href="userServlet?action=logout">注销</a>&nbsp;&nbsp;
+            <a href="pages/order/order.jsp">我的订单</a>
         </c:if>
         <a href="pages/cart/cart.jsp">购物车</a>
-        <a href="pages/manager/manager.jsp">后台管理</a>
+        <a href="userServlet?action=authentication">后台管理</a>
     </div>
 </div>
 <div id="main">
@@ -64,7 +67,7 @@
             </div>
             <div class="jk_info">
                 <div class="jk_name">
-                    <span class="sp1">jk名:</span>
+                    <span class="sp1">j&nbsp;k:</span>
                     <span class="sp2">${jk.name}</span>
                 </div>
                 <div class="jk_author">

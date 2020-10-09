@@ -20,14 +20,14 @@
 
 <div id="header">
     <img class="logo_img" alt="" src="static/img/logo.jpg">
-    <span class="wel_word">图书管理系统</span>
+    <span class="wel_word">jk管理系统</span>
     <%@include file="/pages/common/manager_menu.jsp" %>
 </div>
 
 <div id="main">
     <table>
         <tr>
-            <td>名称</td>
+            <td>jk</td>
             <td>价格</td>
             <td>作者</td>
             <td>销量</td>

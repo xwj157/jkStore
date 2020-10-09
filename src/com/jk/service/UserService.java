@@ -12,4 +12,6 @@ public interface UserService {
     public User login(User user);
 
     public boolean existUsername(String username);
+
+    public Integer permission(String username);
 }

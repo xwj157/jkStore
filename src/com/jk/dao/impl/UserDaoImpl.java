@@ -3,6 +3,7 @@ package com.jk.dao.impl;
 import com.jk.dao.UserDao;
 import com.jk.pojo.User;
 
+
 /**
  * @author xwj157
  * @create 2020-08-10 14:56
@@ -26,4 +27,12 @@ public class UserDaoImpl extends BaseDAO implements UserDao {
         String sql = "select `id`,`username`,`password`,`email`,`permission` from t_user where username = ? and password = ?";
         return queryForOne(User.class,sql,username,password);
     }
+
+    @Override
+    public Integer queryUserPermission(String username) {
+        String sql = "select `permission` from t_user where username = ?" ;
+        return (Integer) queryForSingleValue(sql,username);
+    }
+
+
 }

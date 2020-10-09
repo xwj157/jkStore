@@ -22,7 +22,7 @@ public class JKServlet extends BaseServlet{
     protected void add(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int pageNo = WebUtils.parseInt(req.getParameter("pageNo"),0);
         pageNo += 1;
-        JK jk = WebUtils.copyParamToBean(req.getParameterMap(),new JK());
+        JK jk = WebUtils.copyParamToBean(req,new JK());
         jkService.addJK(jk);
         //重定向
         resp.sendRedirect(req.getContextPath() + "/${requestScope.page.url}&pageNo=" + pageNo);
@@ -35,7 +35,7 @@ public class JKServlet extends BaseServlet{
     }
 
     protected void update(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        JK jk = WebUtils.copyParamToBean(req.getParameterMap(),new JK());
+        JK jk = WebUtils.copyParamToBean(req,new JK());
         jkService.updateJK(jk);
         resp.sendRedirect(req.getContextPath() + "/manager/jkServlet?action=page&pageNo=" + req.getParameter("pageNo"));
     }
