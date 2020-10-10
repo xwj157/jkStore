@@ -45,12 +45,21 @@
 
 
     <servlet>
-        <servlet-name>OrderServlet</servlet-name>
-        <servlet-class>com.jk.servlet.OrderServlet</servlet-class>
+        <servlet-name>OrderClientServlet</servlet-name>
+        <servlet-class>com.jk.servlet.OrderClientServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>OrderServlet</servlet-name>
-        <url-pattern>/orderServlet</url-pattern>
+        <servlet-name>OrderClientServlet</servlet-name>
+        <url-pattern>/orderClientServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OrderManagerServlet</servlet-name>
+        <servlet-class>com.jk.servlet.OrderManagerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderManagerServlet</servlet-name>
+        <url-pattern>/orderManagerServlet</url-pattern>
     </servlet-mapping>
 
 
@@ -72,4 +81,5 @@
         <filter-name>ManagerFilter</filter-name>
         <url-pattern>/pages/manager/*</url-pattern>
     </filter-mapping>
+
 </web-app>

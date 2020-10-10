@@ -15,9 +15,9 @@
 <body>
 	
 	<div id="header">
-			<img class="logo_img" alt="" src="static/img/logo.jpg" >
+			<img class="logo_img" alt="" src="static/img/rabbit.jpg" >
 			<span class="wel_word">结算</span>
-		<%@include file="/pages/common/login_success_menu.jsp"%>>
+		<%@include file="/pages/common/login_success_menu.jsp"%>
 	</div>
 	
 	<div id="main">

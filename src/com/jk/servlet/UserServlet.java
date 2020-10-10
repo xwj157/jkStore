@@ -58,7 +58,6 @@ public class UserServlet extends BaseServlet {
                 req.setAttribute("email", email);
                 req.getRequestDispatcher("/pages/user/regist.jsp").forward(req, resp);
             } else {
-
                 userService.registUser(new User(null, username, password, email));
                 req.getRequestDispatcher("/pages/user/regist_success.jsp").forward(req, resp);
             }

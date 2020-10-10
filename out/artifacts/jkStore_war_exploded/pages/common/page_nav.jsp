@@ -1,11 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: xwj157
-  Date: 2020-08-14
-  Time: 16:26
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<br>
+<br>
 <div id="page_nav">
     <c:if test="${requestScope.page.pageNo > 1}">
         <a href="${requestScope.page.url}&pageNo=1">首页</a>
@@ -42,7 +37,6 @@
         </c:if>
     </c:forEach>
 
-
     <c:if test="${requestScope.page.pageNo < requestScope.page.pageTotal}">
         <a href="${requestScope.page.url}&pageNo=${requestScope.page.pageNo + 1}">下一页</a>
         <a href="${requestScope.page.url}&pageNo=${requestScope.page.pageTotal}">末页</a>
@@ -61,6 +55,7 @@
                 // }
             });
         });
-
     </script>
 </div>
+<br>
+<br>

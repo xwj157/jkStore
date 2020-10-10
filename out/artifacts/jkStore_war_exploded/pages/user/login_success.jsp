@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>显微镜会员注册页面</title>
+<title>登录成功</title>
 	<%@include file="/pages/common/head.jsp"%>
 <style type="text/css">
 	h1 {
@@ -18,8 +18,8 @@
 </head>
 <body>
 		<div id="header">
-				<img class="logo_img" alt="" src="static/img/logo.jpg" >
-				<%@include file="/pages/common/login_success_menu.jsp"%>>
+				<img class="logo_img" alt="" src="static/img/rabbit.jpg" >
+				<%@include file="/pages/common/login_success_menu.jsp"%>
 		</div>
 		
 		<div id="main">

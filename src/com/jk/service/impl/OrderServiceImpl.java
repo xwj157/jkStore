@@ -10,6 +10,7 @@ import com.jk.pojo.*;
 import com.jk.service.OrderService;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -36,7 +37,55 @@ public class OrderServiceImpl implements OrderService {
             jkDao.updateJK(jk);
         }
         cart.clear();
-
         return orderId;
+    }
+
+    @Override
+    public List<Order> getMyOrders(User user) {
+        return orderDao.getMyOrders(user);
+    }
+
+    /**
+     * 获取所有订单
+     *
+     * @return
+     */
+    @Override
+    public List<Order> getAllOrders() {
+        return orderDao.getAllOrders();
+    }
+
+    /**
+     * 确认收货
+     *
+     * @param order
+     */
+
+
+
+    /**
+     * 发货
+     *
+     * @param
+     */
+    @Override
+    public void send(String orderId) {
+        orderDao.updateStatus(1,orderId);
+    }
+
+    @Override
+    public void receive(String orderId) {
+        orderDao.updateStatus(2,orderId);
+    }
+
+    /**
+     * 订单详情
+     *
+     * @param
+     * @return
+     */
+    @Override
+    public List<OrderItem> getOrderDetails(String orderId) {
+        return orderItemDao.getOrderDetailsByOrderId(orderId);
     }
 }

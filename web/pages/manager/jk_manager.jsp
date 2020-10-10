@@ -4,12 +4,12 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>图书管理</title>
+    <title>jk管理</title>
     <%@include file="/pages/common/head.jsp" %>
     <script type="text/javascript">
         $(function () {
             $("a.deleteClass").click(function () {
-                return confirm("你确定要删除【" + $(this).parent().parent().find("td:first").text() + "】？");
+                return confirm("你确定要删除【" + $(this).parent().parent().find("td:nth-child(2)").text() + "】？");
                 // return false;
             });
         });
@@ -19,15 +19,16 @@
 <body>
 
 <div id="header">
-    <img class="logo_img" alt="" src="static/img/logo.jpg">
-    <span class="wel_word">jk管理系统</span>
+    <img class="logo_img" alt="" src="static/img/rabbit.jpg">
+    <span class="wel_word">jk管理</span>
     <%@include file="/pages/common/manager_menu.jsp" %>
 </div>
 
 <div id="main">
     <table>
         <tr>
-            <td>jk</td>
+            <td>图片</td>
+            <td>名字</td>
             <td>价格</td>
             <td>作者</td>
             <td>销量</td>
@@ -36,6 +37,9 @@
         </tr>
         <c:forEach items="${requestScope.page.items}" var="jk">
             <tr>
+                <td>
+                    <img class="jk_manager_img" style="height:80px ;width:80px " alt="" src="static/img/${jk.imgPath}"/>
+                </td>
                 <td>${jk.name}</td>
                 <td>${jk.price}</td>
                 <td>${jk.author}</td>
@@ -45,19 +49,8 @@
                 <td><a class="deleteClass" href="manager/jkServlet?action=delete&id=${jk.id}&pageNo=${requestScope.page.pageNo}">删除</a></td>
             </tr>
         </c:forEach>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><a href="pages/manager/jk_edit.jsp?pageNo=${requestScope.page.pageTotal}">添加图书</a></td>
-        </tr>
     </table>
-
     <%@include file="/pages/common/page_nav.jsp"%>
-
 </div>
 
 <%@include file="/pages/common/foot.jsp" %>

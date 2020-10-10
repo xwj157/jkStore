@@ -3,12 +3,12 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>显微镜会员登录页面</title>
+    <title>兔姬舍会员登录页面</title>
     <%@include file="/pages/common/head.jsp"%>
 </head>
 <body>
 <div id="login_header">
-    <img class="logo_img" alt="" src="static/img/logo.jpg">
+    <img class="logo_img" alt="" src="static/img/rabbit.jpg">
 </div>
 
 <div class="login_banner">
@@ -21,7 +21,7 @@
         <div class="login_form">
             <div class="login_box">
                 <div class="tit">
-                    <h1>显微镜会员</h1>
+                    <h1>兔姬舍会员</h1>
                     <a href="pages/user/regist.jsp">立即注册</a>
                 </div>
                 <div class="msg_cont">

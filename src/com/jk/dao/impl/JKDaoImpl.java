@@ -13,7 +13,7 @@ import java.util.List;
 public class JKDaoImpl extends BaseDAO implements JKDao {
     @Override
     public int addJK(JK jk) {
-        String  sql = "insert into t_jk(`name`,`author`,`price`,`sales`,`stock`,`img_path`) values(?,?,?,?,?,?)";
+        String  sql = "insert into t_jk(`name`,`author`,`price`,`sales`,`stock`,`img_path` imgPath) values(?,?,?,?,?,?)";
 
         return update(sql,jk.getName(),jk.getAuthor(),jk.getPrice(),jk.getSales(),jk.getStock(),jk.getImgPath());
     }
@@ -27,8 +27,8 @@ public class JKDaoImpl extends BaseDAO implements JKDao {
 
     @Override
     public int updateJK(JK jk) {
-        String sql = "update t_jk set `name` = ?,`author` = ?,`price` = ?,`sales` = ?,`stock` = ?,`img_path` = ? where id = ?";
-        return update(sql,jk.getName(),jk.getAuthor(),jk.getPrice(),jk.getSales(),jk.getStock(),jk.getImgPath(),jk.getId());
+        String sql = "update t_jk set `price` = ?,`sales` = ?,`stock` = ? where id = ?";
+        return update(sql,jk.getPrice(),jk.getSales(),jk.getStock(),jk.getId());
     }
 
     @Override

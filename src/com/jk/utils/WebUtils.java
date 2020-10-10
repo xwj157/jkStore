@@ -1,8 +1,10 @@
 package com.jk.utils;
 
+import com.jk.pojo.User;
 import org.apache.commons.beanutils.BeanUtils;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
@@ -24,7 +26,9 @@ public class WebUtils {
 
     public static int parseInt(String strInt,int defaultValue){
         try {
-            return Integer.parseInt(strInt);
+            if (strInt != null && !"".equals(strInt)){
+                return Integer.parseInt(strInt);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

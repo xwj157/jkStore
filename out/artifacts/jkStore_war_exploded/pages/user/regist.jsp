@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>显微镜会员注册页面</title>
+<title>兔姬舍会员注册页面</title>
 <%@include file="/pages/common/head.jsp"%>
 	<script type="text/javascript">
 		$(function (){
@@ -71,7 +71,7 @@
 </head>
 <body>
 		<div id="login_header">
-			<img class="logo_img" alt="" src="static/img/logo.jpg" >
+			<img class="logo_img" alt="" src="static/img/rabbit.jpg" >
 		</div>
 
 			<div class="login_banner">
@@ -117,9 +117,9 @@
 									value="${requestScope.email}"/>
 									<br />
 									<br />
-									<label>&nbsp;&nbsp;验证码&nbsp;&nbsp;：</label>
+									<label>&nbsp;验证码&nbsp;：</label>
 									<input class="itxt" type="text" name="code" style="width: 90px;" id="code"/>
-									<img id="code_img" alt="" src="kaptcha.jpg" style="float: right; margin-right: 50px; width: 110px; height: 40px;">
+									<img id="code_img" alt="" src="kaptcha.jpg" style="float: right; margin-right: 45px; width: 105px; height: 40px;">
 									<br />
 									<br />
 									<input type="submit" value="注册" id="sub_btn" />

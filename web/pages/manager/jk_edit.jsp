@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>编辑图书</title>
+<title>编辑jk信息</title>
 	<%@include file="/pages/common/head.jsp"%>
 <style type="text/css">
 	h1 {
@@ -22,8 +22,8 @@
 </head>
 <body>
 		<div id="header">
-			<img class="logo_img" alt="" src="static/img/logo.jpg" >
-			<span class="wel_word">编辑图书</span>
+			<img class="logo_img" alt="" src="static/img/rabbit.jpg" >
+			<span class="wel_word">编辑jk信息</span>
 			<%@include file="/pages/common/manager_menu.jsp"%>
 		</div>
 		
@@ -34,17 +34,17 @@
 				<input type="hidden" name="id" value="${ requestScope.jk.id }">
 				<table>
 					<tr>
-						<td>名称</td>
+						<td>名字</td>
 						<td>价格</td>
 						<td>作者</td>
 						<td>销量</td>
 						<td>库存</td>
 						<td colspan="2">操作</td>
-					</tr>		
+					</tr>
 					<tr>
-						<td><input name="name" type="text" value="${requestScope.jk.name}"/></td>
+						<td>${requestScope.jk.name}</td>
 						<td><input name="price" type="text" value="${requestScope.jk.price}"/></td>
-						<td><input name="author" type="text" value="${requestScope.jk.author}"/></td>
+						<td>${requestScope.jk.author}</td>
 						<td><input name="sales" type="text" value="${requestScope.jk.sales}"/></td>
 						<td><input name="stock" type="text" value="${requestScope.jk.stock}"/></td>
 						<td><input type="submit" value="提交"/></td>
