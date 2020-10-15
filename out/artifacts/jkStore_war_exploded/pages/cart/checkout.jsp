@@ -21,10 +21,7 @@
 	</div>
 	
 	<div id="main">
-		
 		<h1>你的订单已结算，订单号为${sessionScope.orderId}</h1>
-		
-	
 	</div>
 
 	<%@include file="/pages/common/foot.jsp"%>

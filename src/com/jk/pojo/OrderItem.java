@@ -1,9 +1,5 @@
 package com.jk.pojo;
 
-/**
- * @author xwj157
- * @create 2020-08-15 21:15
- */
 public class OrderItem {
     private Integer id;
     private String name;

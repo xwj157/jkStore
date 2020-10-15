@@ -47,12 +47,9 @@
     <script type="text/javascript">
         $(function () {
             $("#searchPageBtn").click(function () {
-
                 var pageNo = $("#pn_input").val();
                 var pageTotal = ${requestScope.page.pageTotal};
-                // if(pageNo > 0 & pageNo <= pageTotal){
                 location.href = "${pageScope.basePath}${requestScope.page.url}&pageNo=" + pageNo;
-                // }
             });
         });
     </script>

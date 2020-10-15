@@ -6,14 +6,10 @@ import com.jk.pojo.JK;
 
 import java.util.List;
 
-/**
- * @author xwj157
- * @create 2020-08-13 13:33
- */
 public class JKDaoImpl extends BaseDAO implements JKDao {
     @Override
     public int addJK(JK jk) {
-        String  sql = "insert into t_jk(`name`,`author`,`price`,`sales`,`stock`,`img_path` imgPath) values(?,?,?,?,?,?)";
+        String  sql = "insert into t_jk(`name`,`author`,`price`,`sales`,`stock`,`img_path`) values(?,?,?,?,?,?)";
 
         return update(sql,jk.getName(),jk.getAuthor(),jk.getPrice(),jk.getSales(),jk.getStock(),jk.getImgPath());
     }

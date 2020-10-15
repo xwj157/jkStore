@@ -34,6 +34,7 @@
 				<input type="hidden" name="id" value="${ requestScope.jk.id }">
 				<table>
 					<tr>
+						<td>图片</td>
 						<td>名字</td>
 						<td>价格</td>
 						<td>作者</td>
@@ -42,6 +43,9 @@
 						<td colspan="2">操作</td>
 					</tr>
 					<tr>
+						<td>
+						<img class="jk_manager_img" style="height:80px ;width:80px " alt="" src="static/img/${jk.imgPath}"/>
+					    </td>
 						<td>${requestScope.jk.name}</td>
 						<td><input name="price" type="text" value="${requestScope.jk.price}"/></td>
 						<td>${requestScope.jk.author}</td>
@@ -51,8 +55,6 @@
 					</tr>	
 				</table>
 			</form>
-			
-	
 		</div>
 
 		<%@include file="/pages/common/foot.jsp"%>

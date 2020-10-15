@@ -12,54 +12,50 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * @author xwj157
- * @create 2020-08-13 14:26
- */
-public class JKServlet extends BaseServlet{
+public class JKServlet extends BaseServlet {
     private JKService jkService = new JKServiceImpl();
 
     protected void add(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int pageNo = WebUtils.parseInt(req.getParameter("pageNo"),0);
+        int pageNo = WebUtils.parseInt(req.getParameter("pageNo"), 0);
         pageNo += 1;
-        JK jk = WebUtils.copyParamToBean(req,new JK());
+        JK jk = WebUtils.copyParamToBean(req.getParameterMap(), new JK());
         jkService.addJK(jk);
-        //重定向
-        resp.sendRedirect(req.getContextPath() + "/${requestScope.page.url}&pageNo=" + pageNo);
+        resp.sendRedirect(req.getContextPath() + "/manager/jkServlet?action=page&pageNo=" + pageNo);
+
     }
 
     protected void delete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int id = WebUtils.parseInt(req.getParameter("id"),0);
+        int id = WebUtils.parseInt(req.getParameter("id"), 0);
         jkService.deleteJKById(id);
         resp.sendRedirect(req.getContextPath() + "/manager/jkServlet?action=page&pageNo=" + req.getParameter("pageNo"));
     }
 
     protected void update(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        JK jk = WebUtils.copyParamToBean(req,new JK());
+        JK jk = WebUtils.copyParamToBean(req.getParameterMap(), new JK());
         jkService.updateJK(jk);
         resp.sendRedirect(req.getContextPath() + "/manager/jkServlet?action=page&pageNo=" + req.getParameter("pageNo"));
     }
 
     protected void getJK(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int id = WebUtils.parseInt(req.getParameter("id"),0);
+        int id = WebUtils.parseInt(req.getParameter("id"), 0);
         JK jk = jkService.queryJKById(id);
-        req.setAttribute("jk",jk);
-        req.getRequestDispatcher("/pages/manager/jk_edit.jsp").forward(req,resp);
+        req.setAttribute("jk", jk);
+        req.getRequestDispatcher("/pages/manager/jk_edit.jsp").forward(req, resp);
     }
 
     protected void list(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<JK> jks = jkService.queryJKs();
-        req.setAttribute("jks",jks);
-        req.getRequestDispatcher("/pages/manager/jk_manager.jsp").forward(req,resp);
+        req.setAttribute("jks", jks);
+        req.getRequestDispatcher("/pages/manager/jk_manager.jsp").forward(req, resp);
     }
 
     protected void page(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int pageNo = WebUtils.parseInt(req.getParameter("pageNo"),1);
+        int pageNo = WebUtils.parseInt(req.getParameter("pageNo"), 1);
         int pageSize = WebUtils.parseInt(req.getParameter("pageSize"), Page.PAGE_SIZE);
         Page<JK> page = jkService.page(pageNo, pageSize);
         page.setUrl("manager/jkServlet?action=page");
-        req.setAttribute("page",page);
-        req.getRequestDispatcher("/pages/manager/jk_manager.jsp").forward(req,resp);
+        req.setAttribute("page", page);
+        req.getRequestDispatcher("/pages/manager/jk_manager.jsp").forward(req, resp);
     }
 
 }

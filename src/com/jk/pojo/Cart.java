@@ -3,13 +3,7 @@ package com.jk.pojo;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/**
- * @author xwj157
- * @create 2020-08-15 15:54
- */
 public class Cart {
-//    private Integer totalCount;
-//    private Double totalPrice;
     private Map<Integer,CartItem> items = new LinkedHashMap<Integer,CartItem>();
 
     public void addItem(CartItem cartItem){

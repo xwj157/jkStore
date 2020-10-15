@@ -1,9 +1,5 @@
 package com.jk.pojo;
 
-/**
- * @author xwj157
- * @create 2020-10-05 11:33
- */
 public class User {
     private Integer id;
     private String username;

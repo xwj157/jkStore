@@ -4,10 +4,6 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-/**
- * @author xwj157
- * @create 2020-08-16 13:01
- */
 public class ManagerFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

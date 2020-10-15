@@ -3,11 +3,6 @@ package com.jk.dao.impl;
 import com.jk.dao.UserDao;
 import com.jk.pojo.User;
 
-
-/**
- * @author xwj157
- * @create 2020-08-10 14:56
- */
 public class UserDaoImpl extends BaseDAO implements UserDao {
 
     @Override

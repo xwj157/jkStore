@@ -5,10 +5,6 @@ import com.jk.dao.impl.UserDaoImpl;
 import com.jk.pojo.User;
 import com.jk.service.UserService;
 
-/**
- * @author xwj157
- * @create 2020-08-10 15:46
- */
 public class UserServiceImpl implements UserService {
 
     private UserDao userDao = new UserDaoImpl();

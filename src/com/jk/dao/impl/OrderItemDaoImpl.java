@@ -5,10 +5,6 @@ import com.jk.pojo.OrderItem;
 
 import java.util.List;
 
-/**
- * @author xwj157
- * @create 2020-08-15 21:23
- */
 public class OrderItemDaoImpl extends BaseDAO implements OrderItemDao {
     @Override
     public int saveOrderItem(OrderItem orderItem) {

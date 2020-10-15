@@ -14,7 +14,6 @@
 			});
 
 			$("#sub_btn").click(function (){
-                // 验证用户名：必须由字母，数字下划线组成，并且长度为 5 到 12 位
                 var usernameText = $("#username").val();
                 var usernamepatt = /^\w{5,12}$/;
                 if(!usernamepatt.test(usernameText)){
@@ -22,14 +21,12 @@
                     return false;
                 }
 
-                // 验证密码：必须由字母，数字下划线组成，并且长度为 5 到 12 位
                 var passwordText = $("#password").val();
                 var passwordpatt = /^\w{5,12}$/;
                 if(!passwordpatt.test(passwordText)){
                     $("span.errorMsg").text("密码不合法");
                     return false;
                 }
-                // 验证确认密码：和密码相同
 
                 var repwdText = $("#repwd").val();
                 if(repwdText != passwordText){
@@ -37,7 +34,6 @@
                     return false;
                 }
 
-                // 邮箱验证：xxxxx@xxx.com
                 var emailText = $("#email").val();
                 var emailpatt = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
                 if(!emailpatt.test(emailText)){
@@ -45,7 +41,6 @@
                     return false;
                 }
 
-                // 验证码：现在只需要验证用户已输入。因为还没讲到服务器。验证码生成。
                 var codeText = $("#code").val();
                 var codeText = $.trim(codeText);
                 if(codeText == null || codeText == ""){
@@ -86,7 +81,6 @@
 							<div class="tit">
 								<h1>注册显微镜会员</h1>
 								<span class="errorMsg">
-<%--								<%=request.getAttribute("msg")==null?"":request.getAttribute("msg")%>  --%>
 									${requestScope.msg}
 								</span>
 							</div>
@@ -96,7 +90,6 @@
 									<label>用户名称：</label>
 									<input class="itxt" type="text" placeholder="请输入用户名"
 										   autocomplete="off" tabindex="1" name="username" id="username"
-<%--								value="<%=request.getAttribute("username")==null?"":request.getAttribute("username")%>"/>  --%>
 									value="${requestScope.username}"/>
 									<br />
 									<br />

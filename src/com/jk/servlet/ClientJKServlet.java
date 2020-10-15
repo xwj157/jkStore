@@ -11,10 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * @author xwj157
- * @create 2020-08-14 15:00
- */
 public class ClientJKServlet extends BaseServlet{
     private JKService jkService = new JKServiceImpl();
 

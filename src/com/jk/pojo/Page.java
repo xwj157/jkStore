@@ -2,18 +2,14 @@ package com.jk.pojo;
 
 import java.util.List;
 
-/**
- * @author xwj157
- * @create 2020-08-13 21:58
- */
 public class Page<T> {
     public static final Integer PAGE_SIZE = 4;
 
-    private Integer pageNo;//当前页码
-    private Integer pageTotal;//总页码
-    private Integer pageSize = PAGE_SIZE;//当前页显示数量
-    private Integer pageTotalCount;//总记录数
-    private List<T> items;//当前页数据
+    private Integer pageNo;
+    private Integer pageTotal;
+    private Integer pageSize = PAGE_SIZE;
+    private Integer pageTotalCount;
+    private List<T> items;
     private String url;
 
     public Integer getPageNo() {

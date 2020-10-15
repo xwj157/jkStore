@@ -12,10 +12,6 @@ import java.io.IOException;
 
 import static com.google.code.kaptcha.Constants.KAPTCHA_SESSION_KEY;
 
-/**
- * @author xwj157
- * @create 2020-08-12 14:19
- */
 public class UserServlet extends BaseServlet {
     private UserService userService = new UserServiceImpl();
 
@@ -48,13 +44,12 @@ public class UserServlet extends BaseServlet {
         String email = req.getParameter("email");
         String code = req.getParameter("code");
 
-        User user = WebUtils.copyParamToBean(req,new User());
+        User user = WebUtils.copyParamToBean(req.getParameterMap(),new User());
 
         if (token != null && token.equalsIgnoreCase(code)) {
             if (userService.existUsername(username)) {
                 System.out.println("用户名[" + username + "]已存在");
                 req.setAttribute("msg", "用户名已存在！");
-//                req.setAttribute("username",username);
                 req.setAttribute("email", email);
                 req.getRequestDispatcher("/pages/user/regist.jsp").forward(req, resp);
             } else {

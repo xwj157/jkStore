@@ -8,10 +8,6 @@ import com.jk.service.JKService;
 
 import java.util.List;
 
-/**
- * @author xwj157
- * @create 2020-08-13 14:02
- */
 public class JKServiceImpl implements JKService {
 
     private JKDao jkDao = new JKDaoImpl();

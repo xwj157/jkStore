@@ -10,7 +10,6 @@
         $(function () {
             $("a.deleteClass").click(function () {
                 return confirm("你确定要删除【" + $(this).parent().parent().find("td:nth-child(2)").text() + "】？");
-                // return false;
             });
         });
 
@@ -49,6 +48,15 @@
                 <td><a class="deleteClass" href="manager/jkServlet?action=delete&id=${jk.id}&pageNo=${requestScope.page.pageNo}">删除</a></td>
             </tr>
         </c:forEach>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td colspan="2"><a href="pages/manager/jk_add.jsp?pageNo=${requestScope.page.pageNo}">添加</a></td>
+        </tr>
     </table>
     <%@include file="/pages/common/page_nav.jsp"%>
 </div>

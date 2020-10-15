@@ -13,10 +13,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author xwj157
- * @create 2020-08-15 21:42
- */
 public class OrderServiceImpl implements OrderService {
     private OrderDao orderDao = new OrderDaoImpl();
     private OrderItemDao orderItemDao = new OrderItemDaoImpl();
@@ -45,29 +41,11 @@ public class OrderServiceImpl implements OrderService {
         return orderDao.getMyOrders(user);
     }
 
-    /**
-     * 获取所有订单
-     *
-     * @return
-     */
     @Override
     public List<Order> getAllOrders() {
         return orderDao.getAllOrders();
     }
 
-    /**
-     * 确认收货
-     *
-     * @param order
-     */
-
-
-
-    /**
-     * 发货
-     *
-     * @param
-     */
     @Override
     public void send(String orderId) {
         orderDao.updateStatus(1,orderId);
@@ -78,12 +56,6 @@ public class OrderServiceImpl implements OrderService {
         orderDao.updateStatus(2,orderId);
     }
 
-    /**
-     * 订单详情
-     *
-     * @param
-     * @return
-     */
     @Override
     public List<OrderItem> getOrderDetails(String orderId) {
         return orderItemDao.getOrderDetailsByOrderId(orderId);

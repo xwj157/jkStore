@@ -12,10 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * @author xwj157
- * @create 2020-08-15 17:01
- */
 public class CartServlet extends BaseServlet{
 
     private JKService jkService = new JKServiceImpl();

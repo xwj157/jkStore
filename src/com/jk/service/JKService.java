@@ -5,21 +5,18 @@ import com.jk.pojo.Page;
 
 import java.util.List;
 
-/**
- * @author xwj157
- * @create 2020-08-13 14:00
- */
+
 public interface JKService {
 
-    public void addJK(JK jk);
+    void addJK(JK jk);
 
-    public void deleteJKById(Integer id);
+    void deleteJKById(Integer id);
 
-    public void updateJK(JK jk);
+    void updateJK(JK jk);
 
-    public JK queryJKById(Integer id);
+    JK queryJKById(Integer id);
 
-    public List<JK> queryJKs();
+    List<JK> queryJKs();
 
     Page<JK> page(int pageNo, int pageSize);
 

@@ -4,11 +4,6 @@ import com.jk.pojo.JK;
 
 import java.util.List;
 
-
-/**
- * @author xwj157
- * @create 2020-08-13 13:29
- */
 public interface JKDao {
     public int addJK(JK jk);
 

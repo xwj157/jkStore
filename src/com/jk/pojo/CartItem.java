@@ -1,9 +1,5 @@
 package com.jk.pojo;
 
-/**
- * @author xwj157
- * @create 2020-08-15 15:52
- */
 public class CartItem {
     private Integer id;
     private String name;

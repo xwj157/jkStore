@@ -7,10 +7,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.Method;
 
-/**
- * @author xwj157
- * @create 2020-08-12 21:33
- */
 public abstract class BaseServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

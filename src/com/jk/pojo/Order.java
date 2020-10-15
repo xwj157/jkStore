@@ -2,10 +2,6 @@ package com.jk.pojo;
 
 import java.util.Date;
 
-/**
- * @author xwj157
- * @create 2020-08-15 21:12
- */
 public class Order {
     private String orderId;
     private Date createTime;

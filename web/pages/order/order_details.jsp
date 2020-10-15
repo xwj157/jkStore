@@ -6,19 +6,13 @@
     <meta charset="UTF-8">
     <title>订单详情</title>
     <%@include file="/pages/common/head.jsp" %>
-    <%--<style type="text/css">
-        h1 {
-            text-align: center;
-            margin-top: 200px;
-        }
-    </style>--%>
 </head>
 <body>
 
 <div id="header">
     <img class="logo_img" alt="" src="static/img/rabbit.jpg">
     <span class="wel_word">订单详情</span>
-    <%@include file="/pages/common/login_success_menu.jsp" %>
+    <%@include file="/pages/common/login_success_menu.jsp"%>
 </div>
 
 <div id="main">
