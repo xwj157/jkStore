@@ -1,20 +1,20 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="jkStore:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/jkStore_war_exploded</output-path>
+  <artifact type="exploded-war" name="jkstore">
+    <output-path>$USER_HOME$/Desktop/jkstore</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="jkStore/web/Web" />
+      <element id="dir-copy" path="$PROJECT_DIR$" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="jkStore" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="commons-fileupload-1.2.1" />
           <element id="library" level="project" name="commons-beanutils-1.8.0" />
           <element id="library" level="project" name="lib" />
           <element id="library" level="module" name="JUnit4" module-name="jkStore" />
+          <element id="library" level="project" name="commons-fileupload-1.2.1" />
         </element>
       </element>
-      <element id="dir-copy" path="$PROJECT_DIR$" />
+      <element id="javaee-facet-resources" facet="jkStore/web/Web" />
     </root>
   </artifact>
 </component>
