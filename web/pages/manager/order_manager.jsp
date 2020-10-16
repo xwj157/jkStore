@@ -11,7 +11,7 @@
 
 <div id="header">
     <img class="logo_img" alt="" src="static/img/rabbit.jpg">
-    <span class="wel_word">订单管理</span>·
+    <span class="wel_word">订单管理</span>
     <%@include file="/pages/common/manager_menu.jsp" %>
 </div>
 
