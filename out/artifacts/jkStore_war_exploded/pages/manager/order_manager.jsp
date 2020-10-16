@@ -17,7 +17,7 @@
 
 <div id="main">
     <c:if test="${empty orders }">
-        <h1>还没有任何订单</h1>
+        <h1>还没有任何订单，<a href="index.jsp">返回主页</a></h1>
     </c:if>
     <c:if test="${!empty orders }">
         <table>

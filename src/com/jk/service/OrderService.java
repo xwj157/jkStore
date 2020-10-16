@@ -7,10 +7,6 @@ import com.jk.pojo.User;
 
 import java.util.List;
 
-/**
- * @author xwj157
- * @create 2020-08-15 21:41
- */
 public interface OrderService {
     String createOrder(Cart cart, Integer userId);
 
